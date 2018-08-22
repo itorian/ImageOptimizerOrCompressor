@@ -40,7 +40,7 @@ namespace WebApplication12.ImageCompression
 
             var result = new ImageCompressionResult(fileName, targetFile, stopwatch.Elapsed);
 
-            HandleResult(result, 1);
+            HandleResult(result);
 
             return result;
         }
@@ -94,7 +94,7 @@ namespace WebApplication12.ImageCompression
             return _supported.Any(s => s.Equals(ext, StringComparison.OrdinalIgnoreCase));
         }
 
-        void HandleResult(ImageCompressionResult result, int count)
+        void HandleResult(ImageCompressionResult result)
         {
             string name = Path.GetFileName(result.OriginalFileName);
 
